@@ -1,0 +1,10 @@
+#form_cropper					{}
+#tbl_cropper_wrap				{}
+#tbl_cropper_wrap #container	{	width:600px; min-height:200px; background-color:#EEE; text-align:center; vertical-align:middle; 
+									overflow:hidden; background:#EEEEEE;}
+#tbl_cropper_wrap #preview		{	height:375px; width:300px;} 							
+#tbl_cropper_wrap th div		{	overflow:hidden;}
+#tbl_cropper_wrap td			{	background-color:#FAFAFA; vertical-align:top; }
+#tbl_cropper_wrap .error		{	background-color:#C00; font-weight:bold; color:#FFF;}
+#div_loader						{	position:absolute; width:600px; height:205px; padding-top:170px; 
+									display:none; z-index:1000;}

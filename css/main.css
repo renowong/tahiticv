@@ -1,0 +1,270 @@
+body{
+    position : absolute;
+    top : 0px;
+    text-align : center;
+    width : 100%;
+    height : 95%;
+    background-color : #167EAB;
+}
+
+label{
+    font-weight:bold;
+}
+
+textarea {
+    resize: none;
+    padding : 3px;
+    border : solid 1px;
+}
+
+button {
+    border : solid 1px;
+    padding : 3px;
+}
+
+input {
+    border : solid 1px;
+    padding : 3px;
+}
+
+select {
+    border : solid 1px;
+    padding : 3px;
+}
+
+.incorrect {
+   background : yellow; 
+}
+
+h3{
+    font-size : large;
+    text-indent : 10px;
+}
+
+th {
+    background : white;
+    border : solid 1px;
+    padding : 5px;
+    text-align : center;
+}
+
+td {
+    text-align : left;
+}
+
+.allcaps{
+    text-transform: uppercase;
+}
+
+.allscaps{
+    text-transform:lowercase;
+}
+
+.firstcap{
+    text-transform:capitalize;
+}
+
+.nota{
+    font-style : italic;
+
+}
+
+.important{
+    color : red;
+    font-family : sans-serif;
+    font-size : medium;
+    font-style : italic;
+    font-weight:bold;
+    font-variant: small-caps;
+}
+
+/* .center and .msg go together, the center the message div */
+.center{
+    position : relative;
+    text-align : center;
+    margin-left : auto;
+    margin-right : auto;
+    /*border : 1px dashed;*/
+    width : 500px;
+}
+.msg{
+    position : absolute;
+    width : 500px;
+    z-index : 99;
+    border : solid black 5px;
+    text-align: center;
+    background-color : red;
+}
+
+.visu{
+    position : absolute;
+    top : 50px;
+    width : 500px;
+    height : 500px;
+    z-index : 99;
+    border : solid black 5px;
+    background-color : yellow;
+    overflow : auto;
+}
+
+
+.table{
+    position : relative;
+    border : 2px solid;
+    margin : auto;
+    background-color : #167EAB;
+}
+
+#main_table{
+    position : relative;
+    width : 1000px;
+    height : 100%;
+    border : double;
+    text-align : left;
+    margin-left : auto;
+    margin-right : auto;
+    background-color : #FFFFCC;
+}
+
+
+#main_table,td{
+    /*border : 1px dashed; /*a activer juste pour voir les limites des tables*/
+    vertical-align : top;
+    font-family : serif;
+    font-size : small;
+    padding : 5px;
+}
+
+#main_table,tr.login_content{
+    height : 100%;
+}
+
+/*.cssmenu{*/
+/*    position : relative;*/
+/*    text-align : left;*/
+/*    margin-left : auto;*/
+/*    margin-right : auto; */
+/*}*/
+
+
+/*formulaire*/
+.content{
+    height : 100%;
+}
+
+.topmenu{
+    text-align : right;    
+}
+
+.title{
+    text-align: center;
+}
+
+.bottom{
+    height : 10px;
+    background-color : blue;
+}
+
+.cv_exp{
+    background-color : #5EB4F6;
+}
+
+.cv_diplome{
+    background-color : #99FF99;
+}
+
+.cv_cert{
+    background-color : #6600CC;  
+}
+
+.cv_comp{
+    background-color : #CCCC99;  
+}
+
+.cv_lang{
+    background-color : #CC6600;  
+}
+
+.cv_cint{
+    background-color : #CCFF99;  
+}
+
+.trstatus{
+    font-size : medium;
+    font-weight : bold;
+    background-color : #66FF33;
+    padding : 3px;
+    border : solid 1px;
+    text-align:right;
+    vertical-align:middle;
+
+}
+
+.right{
+    text-align:right;
+    width:auto;
+
+}
+
+.coinArrondi{
+margin : 10px;
+padding : 10px;
+background-color : #FFFFCC;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+-khtml-border-radius: 10px;
+border-radius: 10px;
+    
+
+}
+
+.shadow{
+        /*un peu d'ombre :D*/
+-moz-box-shadow: -5px 5px 5px #000;
+-webkit-box-shadow: -5px 5px 5px #000;
+box-shadow: -5px 5px 5px #000;
+}
+
+/*recherche*/
+
+.prefs{
+    background-color : #5EB4F6;  
+}
+
+.results{
+    background-color : yellow;
+    padding : 10px;
+    border : solid 2px;
+}
+
+.form{
+    background-color:#167EAB;
+    color:white;
+}
+
+#announce {
+    border : double 3px;
+    padding : 0px;
+}
+
+.existing_announce{
+    position : relative;
+    border : 2px solid;
+    margin : 10px;
+    padding : 3px;
+    background-color : red;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.vticker{
+    background-color : yellow;
+    border : solid 2px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
