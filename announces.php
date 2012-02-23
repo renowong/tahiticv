@@ -368,7 +368,7 @@ include_once("menu.php"); /* this includes cookie check and custom menu */
                         </tr>
                         <tr>
                             <td colspan="2">
-                                Localisation approximative de l'emploi:
+                                Localisation g&eacute;ographique de l'emploi:
                                 <div id="crosshair"></div>
                                 <div id="map_canvas"></div>
                                 <div id="ft"> 
