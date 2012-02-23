@@ -54,14 +54,12 @@ include_once("menu.php"); /* this includes cookie check and custom menu */
         <tr><td colspan="2" class="title"><img src="images/drapeaupolynesie2.jpg" align="left" width=130 height=80></img><h1>Conditions d'Utilisation de TahitiCV</h1></td></tr>
         <tr><td colspan="2" class="mainmenu"><? print($menu); ?></td></tr>
         <tr>
-            <td class="content"><div class="static_container">
-    <div class="PageContainerWide terms_container">
-        <div class="PageContainerWide_heading">
-            <h1 class="static_h1 fnt12">Conditions d'Utilisation</h1>
-            <h2 class="static_h2 fnt5">Comprendre vos droits et responsabilités en tant qu'utilisateur TahitiCV.</h2>
-            <div class="clear"></div>
+            <td>
+        <div>
+            <h1>Conditions d'Utilisation</h1>
+            <h2>Comprendre vos droits et responsabilités en tant qu'utilisateur TahitiCV.</h2>
         </div>
-        <div id="static_container_body_main">
+        <div>
             <p>Ce document précise les Conditions d'Utilisation (Conditions) sous lesquelles l'utilisateur (ou « vous ») est autorisé utilise les sites et les services de TahitiCV (telles indiquées ci-dessous).</p>
 <p><b>Ces conditions représentent un accord contraignant entre vous et TahitiCV qui exploite le site Web pour le pays dans lequel vous vivez ou dans lequel se trouve le siège de l'entreprise (« TahitiCV »). Vous acceptez ces conditions chaque fois que vous accédez au site de TahitiCV ou utilisez les services de TahitiCV. N'utilisez pas les sites ou les services de TahitiCV si vous n'acceptez pas les conditions présentées ici.</b></p>
 <p>Les sites de TahitiCV sont définis en tant que tous les sites sous le contrôle de TahitiCV, qu'il s'agisse de contrôle partiel ou autre (en particulier TahitiCV.com et le site web à partir duquel vous avez eu accès à ces conditions d'utilisation). Les sites de TahitiCV comprennent de nombreuses fonctions et de nombreux services dont un service en ligne pour publier et rechercher des offres d'emploi («  Services de TahitiCV »). Les sites de TahitiCV comprennent aussi des communautés en ligne (« communautés TahitiCV ») conçues pour permettre une mise en réseau de valeur et professionnelle entre les utilisateurs (« utilisateurs ») des sites de TahitiCV en se basant sur des expériences et des intérêts communs. Les sites de TahitiCV permettent aux utilisateurs de définir aussi des profils individuels qui peuvent contenir des informations personnelles (« Profils ») et donne aussi la possibilité de rendre public ce profil ou une partie du profil.</p>
@@ -713,9 +711,7 @@ Certaines parties/pages des Sites TahitiCV sont soumis à des conditions d'utilis
 Les présentes conditions sont valables tant que vous être utilisateur des sites de TahitiCV. TahitiCV se réserve le droit, à sa seule discrétion, d'exercer toutes les voies de recours que lui accorde la loi, incluant, sans limitation, la suppression de vos affichages sur des Sites TahitiCV ainsi que la résiliation immédiate de votre inscription avec ou sans autre possibilité d'accès aux Sites TahitiCV et/ou à tout autre service que vous fournit TahitiCV, en cas de manquement de votre part aux présentes Conditions d'Utilisation ou si TahitiCV ne peut vérifier ou authentifier les informations soumises lors de votre enregistrement sur un site de TahitiCV. De plus, si vous n'être plus un utilisateur des sites de TahitiCV, certaines clauses des présentes resteront en vigueur après cessation d'utilisation du (des) site(s), dont notamment les clauses 1, 2, 5 et de 7 à 16 inclus. </p>
 <br>
 
-            <div class="clear"></div>
         </div>
-        <div class="clear"></div>
     </div>
 </div>
 
