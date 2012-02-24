@@ -22,7 +22,7 @@ $cat = compose_query($ar_cat,"id_categorie");
     
     $fav = getfav($id);
     
-    $query = "SELECT * FROM `annonces` WHERE ($iles) AND ($cat) AND `activation`='1'"; 
+    $query = "SELECT * FROM `annonces` WHERE ($iles) AND ($cat) AND `activation`='1' AND `date_expiration`>DATE(NOW())"; 
     if ($result = $mysqli->query($query)) {
 
     while($row = $result->fetch_assoc()){
