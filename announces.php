@@ -184,12 +184,15 @@ include_once("menu.php"); /* this includes cookie check and custom menu */
     }
     
     function del_announce(tbl,id){
-        $.get("mods/announces/del_row.php", {tbl:tbl,id:id},
-        function(response) {
-            //readresponse(response);
-            //alert(response);
-        });
-        $("#annonce_"+id).remove();
+        var yesno = confirm("Etes-vous sûr(e) de vouloir supprimer cette annonce?");
+        if(yesno){
+            $.get("mods/announces/del_row.php", {tbl:tbl,id:id},
+            function(response) {
+                //readresponse(response);
+                //alert(response);
+            });
+            $("#annonce_"+id).remove();
+        }
     }
     
     function edit_announce(id){
