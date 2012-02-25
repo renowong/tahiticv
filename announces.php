@@ -193,6 +193,11 @@ include_once("menu.php"); /* this includes cookie check and custom menu */
     }
     
     function edit_announce(id){
+        if($("#id").val()!==""){
+            msg = "Veuillez terminer d'\351diter l'annonce pr\351c\351dente avant de continuer.";
+            message(msg);
+            return false;
+        };
         $.get("mods/announces/get_announces.php", {id:id},
         function(response) {
             load_announce(response);
