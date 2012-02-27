@@ -40,7 +40,8 @@ switch($showwhat){
     $result->free();   
     $mysqli->close();
     
-    $output = "<table style='width:100%;'><tr><td style='text-align:right;'><a href='javascript:void(0)' onclick='close_visu()'><img style='vertical-align: middle;' height='30px' src='images/close.png'/></a></td></tr></table><br/>";
+    $output = "<table style='width:100%;'><tr><td style='text-align:right;'>".
+            "<span id='email'><a href='javascript:sendmail(".$search_id.");'>Envoyer votre CV pour cette annonce</a></span> | <a href='javascript:void(0)' onclick='close_visu()'><img style='vertical-align: middle;' height='30px' src='images/close.png'/></a></td></tr></table><br/>";
     $output .= "<table style='width:100%;'><tr><th colspan='2'>$title</th></tr>".
             "<tr><td><b>Cat&eacute;gorie de l'emloi : </b></td><td>$categorie</td></tr>".
             "<tr><td><b>Localisation de l'emploi : </b></td><td>$ile</td></tr>".

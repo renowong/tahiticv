@@ -165,6 +165,15 @@ include_once("menu.php"); /* this includes cookie check and custom menu */
         });
         $("#fav_"+id).html("Favori Ajouté!");
     }
+    
+    function sendmail(id){
+        //alert("implementer l'envoi mail pour annonce #"+id);
+        $.post("mods/mail/send_cv.php", {id:id},
+        function(response) {
+            message(response);
+        });
+        $("#email").html("CV envoy&eacute;!");
+    }
     </script>
     
     
