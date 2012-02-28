@@ -2,7 +2,9 @@
 set_include_path('/home/renowong/php');
 include_once("../../includes/global_vars.php");
 include_once("../../includes/security.php");
-//require_once "Mail.php";
+require_once "Mail.php";
+require_once('Mail/mime.php');
+
 
 $announce_id = $_POST["id"];
 $id = $_COOKIE["user"];
@@ -13,38 +15,38 @@ $id = $_COOKIE["user"];
 //       
 //       $rs = getrs($id);
 //       
-//       $from = "administrateur@tahiticv.com";
-//       $to = getmail($auth_id);
-//       $subject = "Demande d'autorisation : TahitiCV";
-//       $body = "Bonjour, ceci est une demande émanant de la société $rs\n";
+       $from = "administrateur@tahiticv.com";
+       $to = getmail($announce_id);
+       $subject = "Demande d'autorisation : TahitiCV";
+       $body = "Bonjour, ceci est une demande émanant de la société\n";
 //       $body .= "Celle-ci souhaiterait accéder à vos informations personnelles sur votre Curriculum Vitae.\n";
 //       $body .= "Si vous souhaitez donner cette autorisation à $rs, veuillez cliquer sur le lien ci-après :\n";
 //       $body .= SITEADDR."auth.php?token=$token\n";
 //       $body .= "Dans le cas contraire, veuillez ignorer cette demande.\n\n";
 //       $body .= "L'administrateur TahitiCV.\n";
 //            
-//       $host = "mail.tahiticv.com";
-//       $port = "25";
-//       $username = "administrateur+tahiticv.com";
-//       $password = "jerome12";
-//       
-//       $headers = array ('From' => $from,
-//         'To' => $to,
-//	  'Subject' => $subject);
-//       $smtp = Mail::factory('smtp',
-//	  array ('host' => $host,
-//	    'port' => $port,
-//	    'auth' => true,
-//	    'username' => $username,
-//	    'password' => $password));
+       $host = "mail.tahiticv.com";
+       $port = "25";
+       $username = "administrateur+tahiticv.com";
+       $password = "jerome12";
        
-       //$mail = $smtp->send($to, $headers, $body);
-       print("sending for announce ".$announce_id);
-       //if (PEAR::isError($mail)) {
-       //       echo("<p>" . $mail->getMessage() . "</p>");
-       //} else {
-       //       print("Succes de l'envoi!");
-       //}
+       $headers = array ('From' => $from,
+         'To' => $to,
+	  'Subject' => $subject);
+       $smtp = Mail::factory('smtp',
+	  array ('host' => $host,
+	    'port' => $port,
+	    'auth' => true,
+	    'username' => $username,
+	    'password' => $password));
+       
+       $mail = $smtp->send($to, $headers, $body);
+       //print("sending for announce to ".getmail($announce_id));
+       if (PEAR::isError($mail)) {
+              echo("<p>" . $mail->getMessage() . "</p>");
+       } else {
+              print("Succes de l'envoi!");
+       }
 
 
 function getmail($id){
@@ -57,7 +59,12 @@ function getmail($id){
         exit();
     }
     
-    $query = "SELECT `cv`.`email` FROM `cv` WHERE `cv`.`ID` = '$id'";
+    $query = "SELECT `annonces`.`id_annonceur` FROM `annonces` WHERE `annonces`.`ID` = '$id'";
+    $result = $mysqli->query($query);
+    $row = $result->fetch_row();
+    $annonceurid = $row[0];
+    
+    $query = "SELECT `users`.`email` FROM `users` WHERE `users`.`ID` = '$annonceurid'";
     $result = $mysqli->query($query);
     $row = $result->fetch_row();
     $email = $row[0];
