@@ -17,18 +17,25 @@ $id = $_COOKIE["user"];
 //       
        $from = "administrateur@tahiticv.com";
        $to = getmail($announce_id);
-       $subject = "Demande d'autorisation : TahitiCV";
-       $body = "Bonjour, ceci est une demande émanant de la société\n";
+       $subject = "Soumission d'un CV : TahitiCV";
+       $body = "Bonjour, ceci est un CV de la part de\n";
 //       $body .= "Celle-ci souhaiterait accéder à vos informations personnelles sur votre Curriculum Vitae.\n";
 //       $body .= "Si vous souhaitez donner cette autorisation à $rs, veuillez cliquer sur le lien ci-après :\n";
 //       $body .= SITEADDR."auth.php?token=$token\n";
 //       $body .= "Dans le cas contraire, veuillez ignorer cette demande.\n\n";
 //       $body .= "L'administrateur TahitiCV.\n";
-//            
-       $host = "mail.tahiticv.com";
-       $port = "25";
-       $username = "administrateur+tahiticv.com";
-       $password = "jerome12";
+//
+
+       //old gmail account
+       $host = "ssl://smtp.gmail.com";
+       $port = "465";
+       $username = "tahiticv@gmail.com";
+       $password = "johnnyte\$t";
+       
+       //$host = "mail.tahiticv.com";
+       //$port = "2525";
+       //$username = "administrateur+tahiticv.com";
+       //$password = "jerome12";
        
        $headers = array ('From' => $from,
          'To' => $to,
@@ -45,7 +52,7 @@ $id = $_COOKIE["user"];
        if (PEAR::isError($mail)) {
               echo("<p>" . $mail->getMessage() . "</p>");
        } else {
-              print("Succes de l'envoi!");
+              print("Succ\351s de l'envoi!");
        }
 
 

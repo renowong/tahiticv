@@ -24,15 +24,15 @@ $id = $_COOKIE["user"];
        $body .= "L'administrateur TahitiCV.\n";
        
        //old gmail account
-       //$host = "ssl://smtp.gmail.com";
-       //$port = "465";
-       //$username = "tahiticv@gmail.com";
-       //$password = "johnnyte\$t";
+       $host = "ssl://smtp.gmail.com";
+       $port = "465";
+       $username = "tahiticv@gmail.com";
+       $password = "johnnyte\$t";
        
-       $host = "mail.tahiticv.com";
-       $port = "25";
-       $username = "administrateur+tahiticv.com";
-       $password = "jerome12";
+       //$host = "mail.tahiticv.com";
+       //$port = "2525";
+       //$username = "administrateur+tahiticv.com";
+       //$password = "jerome12";
        
        $headers = array ('From' => $from,
          'To' => $to,
