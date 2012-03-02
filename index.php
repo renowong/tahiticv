@@ -17,7 +17,23 @@ include_once("index_top.php");
             $(document).ready(function () {
                 $("#divmessage").hide();
                 $('#slider').load('mods/ads/slidebox.html');
-                
+		
+                $.urlParam = function(name){
+		    var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+		    return results[1] || 0;
+		}
+		
+		//WIP
+		var auth = $.urlParam('auth');
+		if(auth!==""){
+		    $.post("autologon.php", {auth:auth},
+		    function(response) {
+			//readresponse(response);
+			alert(response);
+		    });
+		}
+
+		
                 /* submit form process */
                 $("#login_form").submit(function(event){
                     /* stop form from submitting normally */
