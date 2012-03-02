@@ -1,7 +1,7 @@
 <?php
 include_once("includes/global_vars.php");
 
-$ver = '25';
+$ver = '26';
 
 $alert = checkdb($ver);
 $vticker = getvticker();
