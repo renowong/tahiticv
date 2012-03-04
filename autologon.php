@@ -10,7 +10,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$code = $_POST['auth'];
+$code = $_GET['auth'];
     
 $query = "SELECT `id_auth` FROM `authorisations` WHERE `code` = '$code'";
 
@@ -22,15 +22,15 @@ if ($result = $mysqli->query($query)) {
     $result->close();
     $mysqli->close();
     if ($num_rows==0 | $row[2]!=$password) {
-	$response .= "<response success='0' msg='Login ou mot de passe incorrect'></response>";
+	//$response .= "<response success='0' msg='Login ou mot de passe incorrect'></response>";
     }else{
-        $user = getdata($id);
-	$response .= "<response success='1' msg='Login en cours...'><login>$user["username"]</login><md5pass>$user["md5pass"]</md5pass></response>";
+        //$user = getdata($id);
+	//$response .= "<response success='1' msg='Login en cours...'><login>$user["username"]</login><md5pass>$user["md5pass"]</md5pass></response>";
     }
 }
 
 
-print($response);
+print($query);
 
 //functions
 

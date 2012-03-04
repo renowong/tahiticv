@@ -1,7 +1,7 @@
 <?php
 /* check if there is cookie, otherwise, send back to index.php  */
 $id = $_COOKIE["user"];
-if($id=="") header("location:index.php");
+if($id=="") header("Location: index.php");
 //print_r($_COOKIE);
 
 $type = get_type_user($id); /* Type=0 is Particulier / Type=1 is Annonceur */

@@ -6,6 +6,8 @@ $ver = '26';
 $alert = checkdb($ver);
 $vticker = getvticker();
 
+//autologon
+if(isset($_GET['auth'])){header("Location: autologon.php?auth=".$_GET['auth']);}
 
 function getvticker(){
     $output = "<ul>";

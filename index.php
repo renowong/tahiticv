@@ -18,23 +18,8 @@ include_once("index_top.php");
                 $("#divmessage").hide();
                 $('#slider').load('mods/ads/slidebox.html');
 		
-                $.urlParam = function(name){
-		    var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
-		    return results[1] || 0;
-		}
-		
-		//WIP
-		var auth = $.urlParam('auth');
-		if(auth!==""){
-		    $.post("autologon.php", {auth:auth},
-		    function(response) {
-			//readresponse(response);
-			alert(response);
-		    });
-		}
-
-		
-                /* submit form process */
+	
+               /* submit form process */
                 $("#login_form").submit(function(event){
                     /* stop form from submitting normally */
                     event.preventDefault();
@@ -50,6 +35,7 @@ include_once("index_top.php");
                     }
                     
                     /* Send the data using post and put the results in a div */
+		    //alert(username);
                     $.post( url, {
                         username: username,
                         password: password
@@ -68,6 +54,12 @@ include_once("index_top.php");
                 height: 0 //default 0=off
                 });
             });
+	    
+	//    function getURLParameter(name) {
+	//	return decodeURI(
+	//	    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+	//	);
+	//    }
 
             function readresponse(xml){
                 $(xml).find("response").each(function(){
