@@ -2,7 +2,6 @@
 /* includes */
 include_once("mods/searchcv/searchcv_top.php");
 include_once("menu.php"); /* this includes cookie check and custom menu */
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -31,9 +30,23 @@ include_once("menu.php"); /* this includes cookie check and custom menu */
             $("#divmessage").css("top",$(window).scrollTop()+"px");
             $("#divvisu").css("top",$(window).scrollTop()+50+"px");
         });
+        var cv = getUrlVars()["cv"];
+        if(cv!=""){
+            show_visu(cv);
+        }else{
+            search();
+        }
         
-        search()
     });
+    
+    function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+    }
+      
     
     function message(string){
         var m = $("#divmessage");

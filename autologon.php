@@ -1,5 +1,6 @@
 <?php
 include_once("includes/global_vars.php");
+include_once("includes/security.php");
 
 $mysqli = new mysqli(HOST, DBUSER, DBPASSWORD, DB);
 
@@ -12,20 +13,24 @@ if (mysqli_connect_errno()) {
 
 $code = $_GET['auth'];
     
-$query = "SELECT `id_auth` FROM `authorisations` WHERE `code` = '$code'";
+$query = "SELECT `cv`.`ID`, `authorisations`.`id_auth` FROM `authorisations` INNER JOIN `cv` ON `authorisations`.`id_user` = `cv`.`id_user` WHERE `authorisations`.`code` = '$code'";
 
 if ($result = $mysqli->query($query)) {
 
     $row = $result->fetch_row();
     $num_rows = $result->num_rows;
-    $id = $row[0];
+    $id = $row[1];
+    $cv = $row[0];
     $result->close();
     $mysqli->close();
     if ($num_rows==0 | $row[2]!=$password) {
-	//$response .= "<response success='0' msg='Login ou mot de passe incorrect'></response>";
+	header("Location: index.php");
     }else{
-        //$user = getdata($id);
-	//$response .= "<response success='1' msg='Login en cours...'><login>$user["username"]</login><md5pass>$user["md5pass"]</md5pass></response>";
+	$token = rand();
+        setcookie("user",$id);
+	setcookie("token",$token);
+	$scv = $token*23+$cv;
+	header("Location: searchcv.php?cv=".$scv);
     }
 }
 
