@@ -31,7 +31,8 @@ include_once("menu.php"); /* this includes cookie check and custom menu */
             $("#divvisu").css("top",$(window).scrollTop()+50+"px");
         });
         var cv = getUrlVars()["cv"];
-        if(cv!=""){
+        //alert(cv);
+        if(typeof cv!="undefined"){
             show_visu(cv);
         }else{
             search();
