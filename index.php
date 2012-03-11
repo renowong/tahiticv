@@ -55,12 +55,7 @@ include_once("index_top.php");
                 });
             });
 	    
-	//    function getURLParameter(name) {
-	//	return decodeURI(
-	//	    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
-	//	);
-	//    }
-
+	    
             function readresponse(xml){
                 $(xml).find("response").each(function(){
                     var success = $(this).attr("success");

@@ -101,8 +101,7 @@ include_once("menu.php"); /* this includes cookie check and custom menu */
         function(response) {
             results = readresponse(response);
             //alert(response);
-        //},'xml'); //incompatible Firefox...
-        });
+        },'xml');
     }
     
     function readresponse(xml){

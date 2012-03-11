@@ -179,8 +179,8 @@ include_once("menu.php"); /* this includes cookie check and custom menu */
         function(response) {
             readresponse(response);
             //alert(response);
-        //},'xml');
-        });
+        },'xml');
+        //});
     }
     
     function del_announce(tbl,id){
