@@ -11,7 +11,7 @@ $id_announce = tdecode($_POST["id_annonce"]);
     /* check connection */
     if (mysqli_connect_errno()) {
         //printf("Connect failed: %s\n", mysqli_connect_error());
-        print("<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE response SYSTEM 'response.dtd' [<!ENTITY ccedil '&#231;'><!ENTITY egrave '&#232;'><!ENTITY eacute '&#233;'><!ENTITY ecirc '&#234;'><!ENTITY icirc '&#238;'><!ENTITY ocirc '&#244;'><!ENTITY ucirc '&#251;'><!ENTITY agrave '&#224;'>]><response success='0' msg='Erreur de connexion &agrave; la base de donn&eacute;es'></response>");
+        print("<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE response SYSTEM 'response.dtd' [".XMLENTITY."]><response success='0' msg='Erreur de connexion &agrave; la base de donn&eacute;es'></response>");
         exit();
     }
     $titre = htmlentities ($_POST["titre"],ENT_QUOTES,'UTF-8');
@@ -47,7 +47,7 @@ $id_announce = tdecode($_POST["id_annonce"]);
     $mysqli->query($query);
     $lastid = $mysqli->insert_id;
     $mysqli->close();
-    print("<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE response SYSTEM 'response.dtd' [<!ENTITY ccedil '&#231;'><!ENTITY egrave '&#232;'><!ENTITY eacute '&#233;'><!ENTITY ecirc '&#234;'><!ENTITY icirc '&#238;'><!ENTITY ocirc '&#244;'><!ENTITY ucirc '&#251;'><!ENTITY agrave '&#224;'>]><response success='1' msg='Annonce mise &agrave; jour'>".
+    print("<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE response SYSTEM 'response.dtd' [".XMLENTITY."]><response success='1' msg='Annonce mise &agrave; jour'>".
           "<announce update='1'><id>".tencode($id_announce)."</id>".
           "<title>$titre</title>".
           "<expiration>$expires</expiration>".
@@ -61,7 +61,7 @@ $id_announce = tdecode($_POST["id_annonce"]);
     $mysqli->query($query);
     $lastid = $mysqli->insert_id;
     $mysqli->close();
-    print("<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE response SYSTEM 'response.dtd' [<!ENTITY ccedil '&#231;'><!ENTITY egrave '&#232;'><!ENTITY eacute '&#233;'><!ENTITY ecirc '&#234;'><!ENTITY icirc '&#238;'><!ENTITY ocirc '&#244;'><!ENTITY ucirc '&#251;'><!ENTITY agrave '&#224;'>]><response success='1' msg='Nouvelle annonce cr&eacute;&eacute;e.'>".
+    print("<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE response SYSTEM 'response.dtd' [".XMLENTITY."]><response success='1' msg='Nouvelle annonce cr&eacute;&eacute;e.'>".
           "<announce update='0'><id>".tencode($lastid)."</id>".
           "<title>$titre</title>".
           "<expiration>$expires</expiration>".
