@@ -17,33 +17,6 @@ include_once("index_top.php");
             $(document).ready(function () {
                 $("#divmessage").hide();
                 $('#slider').load('mods/ads/slidebox.html');
-		
-	
-               /* submit form process */
-                $("#login_form").submit(function(event){
-                    /* stop form from submitting normally */
-                    event.preventDefault();
-                    var $form = $( this ),
-                    username = $form.find( 'input[name="txt_username"]' ).val(),
-                    password = $form.find( 'input[name="txt_password"]' ).val(),
-                    url = $form.attr( 'action' );
-                    
-                    if(username=='' || password==''){
-                        msg="Nom d'utilisateur ou mot de passe vide";
-                        message(msg);
-                        return false;
-                    }
-                    
-                    /* Send the data using post and put the results in a div */
-		    //alert(username);
-                    $.post( url, {
-                        username: username,
-                        password: password
-                    } ,function(response) {
-                        readresponse(response);
-                    },"xml");    
-                    return false; 
-                });
                 
                 $('#news-container').vTicker({ 
 		speed: 1000,
@@ -54,6 +27,29 @@ include_once("index_top.php");
                 height: 0 //default 0=off
                 });
             });
+	    
+	    function submit_form(){
+		//alert("submitting form");
+		var $form = $("#login_form");
+		var username = $form.find( 'input[name="txt_username"]' ).val();
+                var password = $form.find( 'input[name="txt_password"]' ).val();
+                var url = 'access.php';
+                    
+		if(username=='' || password==''){
+		    msg="Nom d'utilisateur ou mot de passe vide";
+		    message(msg);
+		    return false;
+		}
+		
+		/* Send the data using post and put the results in a div */
+		//alert(username);
+		$.post( url, {
+		    username: username,
+		    password: password
+		} ,function(response) {
+		    readresponse(response);
+		},"xml");    
+	    }
 	    
 	    
             function readresponse(xml){
@@ -90,6 +86,13 @@ include_once("index_top.php");
                 $("#txt_username").val("");
                 $("#txt_password").val("");
             }
+	    
+	    function checkenter(e){
+		var unicode=e.keyCode? e.keyCode : e.charCode
+		if(unicode=="13"){
+		    submit_form();
+		}
+	    }
         </script>
     </head>
     <body>
@@ -98,20 +101,20 @@ include_once("index_top.php");
         <table name="main_table" id="main_table" class="coinArrondi shadow">          
             <tr>
                 <td colspan="3">
-                    <form name="login_form" id="login_form" action="access.php" method="post">
+                    <form name="login_form" id="login_form">
                         <?php print $alert; ?>
                         <table name="login_table" id="login_table" class="table">
                             <tr>
                                 <th colspan="2">Acc&egrave;s</th>
                             </tr>
                             <tr>
-                                <td>Nom Utilisateur : </td><td><input type="text" size="15" maxlength="10" name="txt_username" id="txt_username" /></td>
+                                <td>Nom Utilisateur : </td><td><input type="text" size="15" maxlength="10" name="txt_username" id="txt_username" onkeydown="checkenter(event);" /></td>
                             </tr>
                             <tr>
-                                <td>Mot de Passe : </td><td><input type="password" size="15" maxlength="10" name="txt_password" id="txt_password" /></td>
+                                <td>Mot de Passe : </td><td><input type="password" size="15" maxlength="10" name="txt_password" id="txt_password" onkeydown="checkenter(event);" /></td>
                             </tr>
                             <tr>
-                                <td><input type="button" name="btn_cancel" id="btn_cancel" onclick="cancel();" value="Annuler" /> <input type="submit" name="btn_submit" id="btn_submit" value="Se logger" />
+                                <td><input type="button" name="btn_cancel" id="btn_cancel" onclick="cancel();" value="Annuler" /> <input type="button" name="btn_submit" id="btn_submit" value="Se logger" onclick="submit_form();" />
                             </tr>
                         </table>
                     </form>
