@@ -99,7 +99,7 @@ td {
 .visu{
     position : absolute;
     top : 50px;
-    width : 500px;
+    width : 550px;
     height : 500px;
     z-index : 99;
     border : solid black 5px;
