@@ -1,0 +1,12 @@
+widgets -- Ronee
+--Publication des dernières offres d'emplois
+--Publication des dernières demandes d'emplois
+
+formulaire cv -- Reno
+--A terminer certifications, compétences, langues.
+--Module Annonces
+
+design -- Jim
+--Trouver un logo
+--Proposer un design
+--Confectionner les buttons

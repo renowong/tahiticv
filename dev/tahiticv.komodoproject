@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="e2ca3a2f-08bf-458c-836a-b0e803c765f6" kpf_version="5" name="tahiticv.komodoproject">
+<preference-set idref="e2ca3a2f-08bf-458c-836a-b0e803c765f6">
+  <string id="currentInvocationLanguage">PHP</string>
+  <string id="import_dirname">/var/www/tahiticv/</string>
+  <string id="import_exclude_matches">*.*~;*.bak;*.tmp;CVS;.#*;*.pyo;*.pyc;.svn;.git;.hg;.bzr;*%*;tmp*.html;.DS_Store;*.swp;*.kpf;*.komodoproject;.komodotools</string>
+  <string id="import_include_matches"></string>
+  <string id="javascriptExtraPaths">/var/www/tahiticv/js</string>
+  <string id="language">PHP</string>
+  <string id="lastInvocation"></string>
+  <string id="lastTestPlanName_pref">New test plan #6</string>
+  <string id="last_local_directory">/var/www/tahiticv</string>
+  <string id="mappedPaths"></string>
+  <string id="perlExtraPaths"></string>
+  <boolean id="perl_lintOption_includeCurrentDirForLinter">1</boolean>
+  <string id="phpExtraPaths">/var/www/tahiticv</string>
+<preference-set id="testPlans">
+<preference-set id="New test plan #6">
+  <string id="command_line"></string>
+  <string relative="url" id="directory"></string>
+  <string id="language">Perl - TAP (*.t)</string>
+</preference-set>
+</preference-set>
+</preference-set>
+</project>

@@ -1,0 +1,22 @@
+Jquery -- http://www.jquery.com
+PHP -- http://php.about.com
+PHP -- http://php.net
+PHP,javascript -- http://www.w3schools.com
+Menu, widgets -- http://www.dynamicdrive.com
+Forum -- http://stackoverflow.com
+
+Générateur de button etc... -- http://www.grsites.com/start/
+
+Effets CSS http://jonrohan.me/guide/css/creating-triangles-in-css/
+Effets CSS http://jonraasch.com/blog/css-rounded-corners-in-all-browsers
+
+Proposition de hosting:
+http://www.mochahost.com/hosting_order_soho.php
+
+
+Jquery ticker
+http://jquery.malsup.com/cycle/hover.html
+http://www.jugbit.com/jquery-vticker-vertical-news-ticker/
+
+Design
+http://www.bodybuilding.com/exercises/main/popup/name/barbell-deadlift
